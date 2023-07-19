@@ -20,7 +20,7 @@ const Home = () => {
     //if yes, route user to the home page of the app, else route to the login/signup page
    const navigation = useNavigation()
    const navigateToLogin = () => {
-        navigation.navigate('2FAuthPage')
+        navigation.navigate('Login')
    }
 
    useEffect(() => {
