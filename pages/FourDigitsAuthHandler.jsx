@@ -15,14 +15,11 @@ const FourDigitsAuthHandler = () => {
     const navigation = useNavigation()
     
     const navigateToRidePage = () => {
-        navigation.navigate("findRidePage")
-    }
-
-    const checkDigits = () => {
-        if (digit1.length > 0 && digit2.length > 0 && digit3.length > 0 && digit4.length > 0 ){
-            navigateToRidePage()
+        if(digit1.length > 0 && digit2.length > 0 && digit3.length > 0 && digit4.length > 0){
+          navigation.navigate("findRidePage")
         }
     }
+
 
     // useEffect(() => {
     //     checkDigits()
@@ -69,7 +66,10 @@ const FourDigitsAuthHandler = () => {
         <TextInput
           style={styles.input}
           value={digit1}
-          onChangeText={(value) => handleDigitChange(1, value)}
+          onChangeText={(value) => {
+            handleDigitChange(1, value)
+            navigateToRidePage()
+          }}
           keyboardType="numeric"
           maxLength={1}
           autoFocus
@@ -80,7 +80,10 @@ const FourDigitsAuthHandler = () => {
           ref={digit2Ref}
           style={styles.input}
           value={digit2}
-          onChangeText={(value) => handleDigitChange(2, value)}
+          onChangeText={(value) => {
+              handleDigitChange(2, value)
+              navigateToRidePage()
+          }}
           keyboardType="numeric"
           maxLength={1}
           returnKeyType="next"
@@ -90,7 +93,10 @@ const FourDigitsAuthHandler = () => {
           ref={digit3Ref}
           style={styles.input}
           value={digit3}
-          onChangeText={(value) => handleDigitChange(3, value)}
+          onChangeText={(value) => {
+            handleDigitChange(3, value)
+            navigateToRidePage()
+          }}
           keyboardType="numeric"
           maxLength={1}
           returnKeyType="next"
@@ -100,7 +106,10 @@ const FourDigitsAuthHandler = () => {
           ref={digit4Ref}
           style={styles.input}
           value={digit4}
-          onChangeText={(value) => handleDigitChange(4, value)}
+          onChangeText={(value) => {
+            handleDigitChange(4, value) 
+            navigateToRidePage()
+          }}
           keyboardType="numeric"
           maxLength={1}
         />
